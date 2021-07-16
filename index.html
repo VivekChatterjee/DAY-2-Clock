@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <title>Vivek's Clock</title>
+  </head>
+  <body>
+    <h1 class="heading">CLOCK</h1>
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hour hand"></div>
+        <div class="min hand"></div>
+        <div class="sec hand"></div>
+      </div>
+    </div>
+
+    <script>
+      const secondHand = document.querySelector(".sec");
+      const minuteHand = document.querySelector(".min");
+      const hourHand = document.querySelector(".hour");
+
+      function setDate() {
+        const now = new Date();
+        const seconds = now.getSeconds();
+        const secondsDegrees = (seconds * 6) + 90;
+        secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+        const minutes = now.getMinutes();
+        const minutesDegrees = (minutes * 6) + (seconds / 60)*6 + 90;
+        minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+
+        const hours = now.getHours();
+        const hoursDegrees = (hours * 30) + (minutes / 60)*30 + 90;
+        hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+      }
+      setInterval(setDate, 1000);
+
+    </script>
+  </body>
+</html>
