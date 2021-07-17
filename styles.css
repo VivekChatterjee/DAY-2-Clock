@@ -22,10 +22,9 @@ body{
     display: block;
     width: 100%;
     position: absolute;
-    top: 3rem;
+    top: 2rem;
     text-align: center;
 }
-
 
 /* Circled clock*/
 .clock{
