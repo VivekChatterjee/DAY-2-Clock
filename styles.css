@@ -17,14 +17,15 @@ body{
 }
 
 .heading{
-    position: absolute;
+    font-family: 'Zen Tokyo Zoo', cursive;
+    color: #52006A;
     display: block;
+    width: 100%;
+    position: absolute;
     top: 3rem;
-    left: 46%;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #293B5F;
-
+    text-align: center;
 }
+
 
 /* Circled clock*/
 .clock{
